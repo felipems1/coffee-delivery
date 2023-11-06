@@ -8,7 +8,7 @@
 
 ## 1 - Sobre
 
-E-commerce de café fictício que oferece uma experiência única de compra de café.
+E-commerce de café que oferece uma experiência única de compra de café.
 
 ## 2 - Tecnologias
 
