@@ -3,9 +3,10 @@
 import type { Metadata } from 'next'
 import { Roboto, Baloo_2 } from 'next/font/google'
 import './globals.css'
+import { Header } from '@/components/header'
 
-const roboto = Roboto({ weight: ['400', '700'] })
-const baloo = Baloo_2({ weight: ['700', '800'] })
+const roboto = Roboto({ weight: ['400', '700'], subsets: ['latin'] })
+const baloo = Baloo_2({ weight: ['700', '800'], subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Coffee Delivery',
@@ -18,7 +19,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body className={roboto.className}>{children}</body>
+      <body className={roboto.className}>
+        <div className="flex min-h-screen w-full flex-col bg-background">
+          <Header />
+          {children}
+        </div>
+      </body>
     </html>
   )
 }
