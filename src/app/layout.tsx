@@ -6,7 +6,7 @@ import './globals.css'
 import { Header } from '@/components/header'
 
 const roboto = Roboto({ weight: ['400', '700'], subsets: ['latin'] })
-const baloo = Baloo_2({ weight: ['700', '800'], subsets: ['latin'] })
+export const baloo = Baloo_2({ weight: ['700', '800'], subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Coffee Delivery',
