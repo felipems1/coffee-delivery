@@ -1,5 +1,5 @@
 import { Coffee, Package, ShoppingCart, Timer } from 'lucide-react'
-import { baloo } from './layout'
+import { baloo } from '../layout'
 import Image from 'next/image'
 import { products } from '@/data/products'
 import { ProductCard } from '@/components/product-card'
