@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 export function Header() {
   return (
-    <header className="flex h-[100px] w-full items-center justify-between px-10 lg:mx-auto lg:max-w-5xl lg:px-0">
+    <header className="flex h-[100px] w-full items-center justify-between px-5 lg:mx-auto lg:max-w-5xl lg:px-0">
       <Image
         src="/logo.png"
         alt="Logo do coffee delivery"

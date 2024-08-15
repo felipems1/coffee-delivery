@@ -1,7 +1,8 @@
 import { baloo } from '@/app/layout'
 import { Product } from '@/types/product'
-import { Minus, Plus, ShoppingCart } from 'lucide-react'
+import { ShoppingCart } from 'lucide-react'
 import Image from 'next/image'
+import { ProductCounter } from './product-counter'
 
 interface ProductCardProps {
   product: Product
@@ -33,11 +34,7 @@ export function ProductCard({ product }: ProductCardProps) {
         </div>
 
         <div className="flex items-center gap-4">
-          <div className="flex gap-5 rounded-md bg-base-button px-2 py-2">
-            <Minus className="text-purple" />
-            <span>1</span>
-            <Plus className="text-purple" />
-          </div>
+          <ProductCounter />
 
           <div className="rounded-md bg-purple-dark p-2">
             <ShoppingCart className="text-white" />

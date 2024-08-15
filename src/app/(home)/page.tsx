@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <main className="sm:py-12 lg:mx-auto lg:max-w-5xl">
       <div className="lg:flex lg:items-center lg:justify-between">
-        <div className="flex max-w-[90vw] flex-col justify-center pl-10 lg:max-w-[60%] lg:pl-0">
+        <div className="flex max-w-[90vw] flex-col justify-center pl-5 lg:max-w-[60%] lg:pl-0">
           <h1 className={`${baloo.className} text-title text-4xl sm:text-5xl`}>
             Encontre o café perfeito para qualquer hora do dia
           </h1>
@@ -57,7 +57,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="mt-12 flex flex-col space-y-10 pl-10 lg:pl-0">
+      <div className="mt-12 flex flex-col space-y-10 pl-5 lg:pl-0">
         <h1 className={`${baloo.className} text-3xl text-base-subtitle`}>
           Nossos cafés
         </h1>
