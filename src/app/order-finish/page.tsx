@@ -1,4 +1,4 @@
-import { DollarSign, MapPin, Timer } from 'lucide-react'
+import { Timer } from 'lucide-react'
 import { baloo } from '../layout'
 import Image from 'next/image'
 
@@ -14,44 +14,19 @@ export default function OrderFinishPage() {
         <p className="text-base-subtitle">
           Agora é só aguardar que logo o café chegará até você
         </p>
-        <div className="mt-5 space-y-5">
-          <div className="flex items-center gap-3">
-            <div className="items-center justify-center rounded-full bg-purple p-2">
-              <MapPin size={20} className="text-white" />
-            </div>
-            <div className="flex flex-col">
-              <span className="text-base-text">
-                Entrega em <b>Rua João Daniel Martinelli, 102</b>
-              </span>
-              <span className="text-base-text">
-                Farrapos - Porto Alegre, RS
-              </span>
-            </div>
-          </div>
 
-          <div className="flex items-center gap-3">
-            <div className="items-center justify-center rounded-full bg-yellow p-2">
-              <Timer size={20} className="text-white" />
-            </div>
-            <div className="flex flex-col">
-              <span className="text-base-text">Previsão de entrega</span>
-              <b className="text-base-text">20 min - 30 min</b>
-            </div>
+        <div className="mt-5 flex items-center gap-3">
+          <div className="items-center justify-center rounded-full bg-yellow p-2">
+            <Timer size={20} className="text-white" />
           </div>
-
-          <div className="flex items-center gap-3">
-            <div className="items-center justify-center rounded-full bg-yellow-dark p-2">
-              <DollarSign size={20} className="text-white" />
-            </div>
-            <div className="flex flex-col">
-              <span className="text-base-text">Pagamento na entrega</span>
-              <b className="text-base-text">Cartão de Crédito</b>
-            </div>
+          <div className="flex flex-col">
+            <span className="text-base-text">Previsão de entrega</span>
+            <b className="text-base-text">20 min - 30 min</b>
           </div>
         </div>
       </div>
-      <div className="hidden w-full lg:block lg:flex-1">
-        <div className="relative mt-10 h-[200px] w-full">
+      <div className="w-full lg:block lg:flex-1">
+        <div className="relative mt-10 h-[250px] w-full">
           <Image src="/illustration.png" alt="" fill />
         </div>
       </div>

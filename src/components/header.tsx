@@ -1,15 +1,19 @@
-import { MapPin, ShoppingCart } from 'lucide-react'
+import { MapPin } from 'lucide-react'
 import Image from 'next/image'
+import Link from 'next/link'
+import { CartIcon } from './cart-icon'
 
 export function Header() {
   return (
     <header className="flex h-[100px] w-full items-center justify-between px-5 lg:mx-auto lg:max-w-5xl lg:px-0">
-      <Image
-        src="/logo.png"
-        alt="Logo do coffee delivery"
-        width={85}
-        height={40}
-      />
+      <Link href="/">
+        <Image
+          src="/logo.png"
+          alt="Logo do coffee delivery"
+          width={85}
+          height={40}
+        />
+      </Link>
 
       <div className="flex items-center gap-2">
         <div className="flex items-center gap-1 rounded-md bg-purple-light p-2 text-purple">
@@ -17,9 +21,7 @@ export function Header() {
           <span>João Pessoa, PB</span>
         </div>
 
-        <div className="cursor-pointer rounded-md bg-yellow-light p-2 text-yellow-dark hover:bg-yellow-dark hover:text-white">
-          <ShoppingCart size={20} />
-        </div>
+        <CartIcon />
       </div>
     </header>
   )

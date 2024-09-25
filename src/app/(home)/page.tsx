@@ -1,10 +1,21 @@
 import { Coffee, Package, ShoppingCart, Timer } from 'lucide-react'
 import { baloo } from '../layout'
 import Image from 'next/image'
-import { products } from '@/data/products'
 import { ProductCard } from '@/components/product-card'
+import { Product } from '@/types/product'
+import { api } from '@/utils/api'
 
-export default function Home() {
+async function getProducts() {
+  const response = await api('/products')
+
+  const products = await response.json()
+
+  return products
+}
+
+export default async function Home() {
+  const products: Product[] = await getProducts()
+
   return (
     <main className="sm:py-12 lg:mx-auto lg:max-w-5xl">
       <div className="lg:flex lg:items-center lg:justify-between">
