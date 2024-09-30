@@ -23,6 +23,7 @@ export function ProductCard({ product }: ProductCardProps) {
 
   const handleIncreaseQuantityClick = () =>
     setProductQuantity((prev) => prev + 1)
+
   const handleDecreaseQuantityClick = () =>
     setProductQuantity((prev) => {
       if (prev === 1) return 1
@@ -61,12 +62,13 @@ export function ProductCard({ product }: ProductCardProps) {
             increaseQuantityClick={handleIncreaseQuantityClick}
           />
 
-          <div
+          <button
             className="cursor-pointer rounded-md bg-purple-dark p-2"
             onClick={handleAddToCartClick}
+            aria-label="Adicionar produto"
           >
             <ShoppingCart className="text-white" />
-          </div>
+          </button>
         </div>
       </div>
     </div>
