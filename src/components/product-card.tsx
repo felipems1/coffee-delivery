@@ -5,31 +5,21 @@ import { Product } from '@/types/product'
 import { ShoppingCart } from 'lucide-react'
 import Image from 'next/image'
 import { ProductCounter } from './product-counter'
-import { useContext, useState } from 'react'
+import { useContext } from 'react'
 import { CartContext } from '@/contexts/cart'
+import { useProductQuantity } from '@/hooks/useProductQuantity'
 
 interface ProductCardProps {
   product: Product
 }
 
 export function ProductCard({ product }: ProductCardProps) {
-  const [productQuantity, setProductQuantity] = useState(1)
-
   const { addProductToCart } = useContext(CartContext)
+  const { quantity, increase, decrease } = useProductQuantity()
 
   const handleAddToCartClick = () => {
-    addProductToCart({ product: { ...product, quantity: productQuantity } })
+    addProductToCart({ product: { ...product, quantity } })
   }
-
-  const handleIncreaseQuantityClick = () =>
-    setProductQuantity((prev) => prev + 1)
-
-  const handleDecreaseQuantityClick = () =>
-    setProductQuantity((prev) => {
-      if (prev === 1) return 1
-
-      return prev - 1
-    })
 
   return (
     <div className="flex max-w-[320px] flex-col items-center space-y-4 rounded-bl-[36px] rounded-tr-[36px] bg-base-card p-5">
@@ -57,9 +47,9 @@ export function ProductCard({ product }: ProductCardProps) {
 
         <div className="flex items-center gap-4">
           <ProductCounter
-            quantity={productQuantity}
-            decreaseQuantityClick={handleDecreaseQuantityClick}
-            increaseQuantityClick={handleIncreaseQuantityClick}
+            quantity={quantity}
+            decreaseQuantityClick={decrease}
+            increaseQuantityClick={increase}
           />
 
           <button
